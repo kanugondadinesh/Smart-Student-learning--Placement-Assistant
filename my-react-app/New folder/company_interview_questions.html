@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Company Interview Questions — SSLP</title>
+<style>
+  :root{--bg:#071029;--card:#ffffff;--muted:#6b7280;--grad-a:#7c3aed;--grad-b:#06b6d4;--radius:18px;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,#071029,#041226);color:#0b1220;min-height:100vh;}
+  .page{max-width:1100px;margin:28px auto;padding:28px;border-radius:24px;background:#fff;}
+  h1{margin:0;font-size:32px}
+  .tag{color:#475569;margin-top:8px}
+  .back{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;border:1px solid rgba(11,16,32,0.08);cursor:pointer;background:#f8fafc;text-decoration:none;color:#0b1220}
+  .card{background:#f8fafc;border-radius:18px;padding:20px;margin-top:18px;box-shadow:0 16px 40px rgba(2,6,23,0.08)}
+  .company-buttons{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:18px}
+  .ai-btn{background:linear-gradient(90deg,var(--grad-a),var(--grad-b));color:#fff;padding:14px 18px;border:none;border-radius:14px;cursor:pointer;font-weight:700}
+  .question-list{margin-top:18px;display:grid;gap:14px}
+  .question-card{background:#fff;border-radius:14px;padding:16px;box-shadow:0 10px 30px rgba(2,6,23,0.06)}
+  .pill{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(124,58,237,0.08);color:#4f46e5;font-size:13px;margin-top:12px}
+</style>
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="mini_project.html">← Back to Dashboard</a>
+    <h1>Company Interview Questions</h1>
+    <div class="tag">Pick a company and review role-specific interview questions designed for campus placement and freshers.</div>
+
+    <div class="card">
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+        <div><strong>Select a company</strong></div>
+        <div class="company-buttons">
+          <button class="ai-btn" onclick="selectCompany('Amazon')">Amazon</button>
+          <button class="ai-btn" onclick="selectCompany('Google')">Google</button>
+          <button class="ai-btn" onclick="selectCompany('Microsoft')">Microsoft</button>
+          <button class="ai-btn" onclick="selectCompany('Infosys')">Infosys</button>
+        </div>
+      </div>
+      <div id="questionPanel" class="question-list">
+        <div class="question-card"><strong>Choose a company to load questions.</strong></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>How to use this page</h2>
+      <p class="tag">Each company includes common technical and HR questions. Practice answering them out loud, then check sample guidance and follow-up tips.</p>
+      <div class="pill">Recommended for interview readiness</div>
+    </div>
+  </div>
+
+<script>
+  const companyQuestions = {
+    Amazon: [
+      { q: 'Tell me about a time you solved a difficult problem with limited resources.', type:'Behavioral' },
+      { q: 'Explain how a hash table works and when you would use one.', type:'Technical' },
+      { q: 'What is the difference between a process and a thread?', type:'Technical' }
+    ],
+    Google: [
+      { q: 'Describe a data structure that supports insert, delete, and get-random in O(1).', type:'Technical' },
+      { q: 'How do you keep yourself updated with new technologies?', type:'HR' },
+      { q: 'Explain dynamic programming with an example.', type:'Technical' }
+    ],
+    Microsoft: [
+      { q: 'Design a system for a simple note-taking app.', type:'Technical' },
+      { q: 'What are the differences between SQL and NoSQL databases?', type:'Technical' },
+      { q: 'How would you handle ambiguity in a project requirement?', type:'HR' }
+    ],
+    Infosys: [
+      { q: 'Describe your understanding of the software development lifecycle.', type:'HR' },
+      { q: 'What are the key features of object-oriented programming?', type:'Technical' },
+      { q: 'How do you manage deadlines when you have multiple tasks?', type:'HR' }
+    ]
+  };
+
+  function selectCompany(company) {
+    const panel = document.getElementById('questionPanel');
+    const questions = companyQuestions[company] || [];
+    panel.innerHTML = `<div class="question-card"><strong>Loading questions for ${company}...</strong></div>`;
+    setTimeout(() => {
+      panel.innerHTML = '';
+      if (!questions.length) {
+        panel.innerHTML = '<div class="question-card">No questions available yet.</div>';
+        return;
+      }
+      questions.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+        card.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;"><strong>${index + 1}. ${item.q}</strong><span class="pill">${item.type}</span></div>`;
+        panel.appendChild(card);
+      });
+    }, 250);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact — SSLP</title>
+<style>
+  :root{--bg:#071029;--card:#ffffff;--muted:#6b7280;--grad-a:#7c3aed;--grad-b:#06b6d4;--radius:18px;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,#071029,#041226);color:#0b1220;min-height:100vh;}
+  .page{max-width:700px;margin:28px auto;padding:28px;border-radius:24px;background:#fff;}
+  .back{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;border:1px solid rgba(11,16,32,0.08);cursor:pointer;background:#f8fafc;text-decoration:none;color:#0b1220}
+  .form-card{background:#f8fafc;border-radius:18px;padding:24px;margin-top:18px;box-shadow:0 16px 40px rgba(2,6,23,0.08)}
+  label{display:block;margin-top:14px;font-weight:700;color:#0b1220}
+  input, textarea{width:100%;padding:12px;border-radius:12px;border:1px solid #d1d5db;margin-top:8px;font-size:15px}
+  .ai-btn{background:linear-gradient(90deg,var(--grad-a),var(--grad-b));color:#fff;padding:14px 18px;border:none;border-radius:14px;cursor:pointer;font-weight:700;margin-top:18px}
+  .success{background:#ecfdf5;border:1px solid #10b981;color:#065f46;padding:14px;border-radius:14px;margin-top:18px}
+</style>
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="mini_project.html">← Back to Dashboard</a>
+    <h1>Contact Us</h1>
+    <div class="form-card">
+      <form id="contactForm" onsubmit="submitContact(event)">
+        <label for="name">Your Name</label>
+        <input id="name" type="text" placeholder="Enter your name" required />
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Enter your email" required />
+        <label for="message">Message</label>
+        <textarea id="message" rows="6" placeholder="How can we help you?" required></textarea>
+        <button class="ai-btn" type="submit">Send Message</button>
+      </form>
+      <div id="contactSuccess" class="success" style="display:none;"></div>
+    </div>
+  </div>
+<script>
+  function submitContact(event){
+    event.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    if(!name || !email) return;
+    document.getElementById('contactSuccess').textContent = `Thanks ${name}! Your message has been received. We will contact you at ${email} soon.`;
+    document.getElementById('contactSuccess').style.display = 'block';
+    document.getElementById('contactForm').reset();
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Smart Student Learning & Placement Assistant — Experience</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-dark:#071029;
+    --grad-a:#7c3aed;
+    --grad-b:#06b6d4;
+    --accent:#ffb020;
+    --card:#ffffff;
+    --muted:#f1f5f9;
+    --glass:rgba(255,255,255,0.06);
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;font-family:Inter,system-ui,Arial;background:
+    radial-gradient(900px 400px at 10% 10%, rgba(124,58,237,0.08), transparent),
+    linear-gradient(180deg,var(--bg-dark),#041226); color:#0b1220; -webkit-font-smoothing:antialiased;
+  }
+  .page{max-width:1300px;margin:28px auto;padding:28px;border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,0.98),#fff);box-shadow:0 30px 80px rgba(2,6,23,0.45)}
+  header{display:flex;align-items:center;gap:18px}
+  .brand{
+    width:96px;height:96px;border-radius:18px;background:linear-gradient(135deg,var(--grad-a),var(--grad-b));display:flex;align-items:center;justify-content:center;color:#fff;font-family:Poppins;font-size:26px;font-weight:700;box-shadow:0 12px 40px rgba(124,58,237,0.18)
+  }
+  h1{margin:0;font-family:Poppins;font-size:34px}
+  .tag{color:#475569;margin-top:6px}
+  .layout{display:grid;grid-template-columns:1fr 380px;gap:22px;margin-top:22px}
+  .hero{
+    border-radius:18px;padding:28px;background:
+    linear-gradient(135deg, rgba(124,58,237,0.06), rgba(6,182,212,0.04));
+    display:flex;gap:20px;align-items:center;justify-content:space-between;
+  }
+  .hero-left{max-width:68%}
+  .cta{display:flex;gap:12px;margin-top:18px}
+  .btn-primary{background:linear-gradient(90deg,var(--grad-a),var(--grad-b));color:#fff;padding:12px 18px;border-radius:12px;border:none;cursor:pointer;font-weight:700}
+  .btn-ghost{background:transparent;border:2px solid rgba(11,16,32,0.06);padding:10px 16px;border-radius:12px;cursor:pointer}
+  .stats{display:flex;gap:12px;margin-top:18px}
+  .stat{background:#fff;padding:12px;border-radius:12px;min-width:120px;text-align:center;box-shadow:0 8px 30px rgba(2,6,23,0.04)}
+  .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 8px 30px rgba(12,18,30,0.06)}
+  .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+  .pill{background:var(--muted);padding:6px 10px;border-radius:999px;font-size:13px}
+  .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+  .feature{padding:14px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfdff);text-align:center;cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease;transform-style:preserve-3d}
+  .feature:hover{transform:translateY(-6px) rotateX(6deg) rotateY(3deg);box-shadow:0 18px 40px rgba(124,58,237,0.14)}
+  .feature h4{margin:8px 0 6px 0}
+  .hero-visual{perspective:1100px;position:relative}
+  .hero-image{width:100%;height:220px;border-radius:20px;object-fit:cover;box-shadow:0 22px 60px rgba(12,18,30,0.18)}
+  .hero-preview{display:grid;grid-template-columns:1fr 1fr;gap:10px;height:220px}
+  .preview-card{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(12,18,30,0.14);background:#fff}
+  .preview-card img{width:100%;height:100%;object-fit:cover;display:block}
+  .preview-card span{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,0.55);color:#fff;padding:6px 10px;border-radius:10px;font-size:12px}
+  .big-visual{height:220px;border-radius:20px;background:linear-gradient(135deg,rgba(124,58,237,0.3),rgba(6,182,212,0.16));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px;position:relative;transform-style:preserve-3d;animation:float-3d 14s ease-in-out infinite;box-shadow:0 22px 60px rgba(12,18,30,0.18)}
+  .big-visual::before{content:'';position:absolute;inset:0;border-radius:20px;background:radial-gradient(circle at top left,rgba(255,255,255,0.35),transparent 40%);mix-blend-mode:screen;opacity:0.7;transform:translateZ(40px)}
+  .big-visual::after{content:'';position:absolute;inset:10px;border-radius:16px;border:1px solid rgba(255,255,255,0.25);pointer-events:none;transform:translateZ(20px)}
+  @keyframes float-3d{0%,100%{transform:rotateY(0deg) rotateX(0deg) translateZ(0)}25%{transform:rotateY(12deg) rotateX(8deg) translateZ(6px)}50%{transform:rotateY(24deg) rotateX(0deg) translateZ(0)}75%{transform:rotateY(12deg) rotateX(-8deg) translateZ(6px)}}
+  .modules{display:grid;grid-template-columns:1.3fr 0.7fr;gap:16px}
+  .module-list{display:grid;gap:12px}
+  .module-card{padding:20px;border-radius:18px;background:linear-gradient(180deg,#fff,#f8fbff);border:1px solid #eef3fb;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;transform-style:preserve-3d}
+  .module-card:hover{transform:translateY(-3px) rotateX(1deg) rotateY(1deg);box-shadow:0 16px 30px rgba(124,58,237,0.12)}
+  .module-card.active{border-color:rgba(124,58,237,0.2);box-shadow:0 18px 50px rgba(124,58,237,0.16);background:linear-gradient(180deg,#f8faff,#fff)}
+  .module-info{background:linear-gradient(180deg,#fff,#f8fbff);border-radius:18px;padding:24px;box-shadow:0 18px 40px rgba(12,18,30,0.06)}
+  .module-info h4{margin-top:0}
+  .module-detail-list{margin-top:18px;padding-left:20px;color:#475569;line-height:1.75}
+  .module-detail-list li{margin-top:10px}
+  .leaderboard{display:flex;flex-direction:column;gap:8px}
+  .student-card{display:flex;align-items:center;gap:12px;padding:14px;border-radius:16px;background:linear-gradient(180deg,#fff,#f8fbff);box-shadow:0 10px 30px rgba(12,18,30,0.08)}
+  .student-avatar{width:60px;height:60px;border-radius:50%;background-size:cover;background-position:center;flex-shrink:0;box-shadow:0 10px 20px rgba(12,18,30,0.1)}
+  .leader{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff)}
+  .quiz-card{padding:14px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfdff);box-shadow:0 8px 20px rgba(12,18,30,0.04)}
+  .option{padding:10px;border-radius:10px;border:1px solid #eef3fb;margin-top:8px;cursor:pointer}
+  .option.correct{border-color:#10b981;background:#ecfdf5}
+  .option.wrong{border-color:#ef4444;background:#fff1f2}
+  .ai-btn{background:linear-gradient(90deg,var(--grad-a),var(--grad-b));color:#fff;padding:8px 12px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+  .chat-toggle{position:fixed;right:22px;bottom:22px;background:linear-gradient(90deg,var(--grad-a),var(--grad-b));color:#fff;border-radius:999px;padding:14px 16px;box-shadow:0 10px 30px rgba(2,6,23,0.3);cursor:pointer;border:none}
+  .chat-panel{position:fixed;right:22px;bottom:86px;width:380px;background:#fff;border-radius:12px;box-shadow:0 20px 60px rgba(2,6,23,0.25);overflow:hidden;display:none;flex-direction:column}
+  .chat-header{padding:12px 14px;background:linear-gradient(90deg,var(--grad-a),var(--grad-b));color:#fff;font-weight:600}
+  .chat-body{padding:12px;height:360px;overflow:auto;background:linear-gradient(180deg,#fbfdff,#fff)}
+  .chat-input{display:flex;padding:10px;border-top:1px solid #eef3fb}
+  .chat-input input{flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef8}
+  .chat-input button{margin-left:8px;padding:10px;border-radius:8px;border:none;background:var(--grad-a);color:#fff}
+  footer{margin-top:22px;padding:18px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfdff);display:flex;justify-content:space-between;align-items:center}
+  @media(max-width:1100px){.layout{grid-template-columns:1fr}.feature-grid{grid-template-columns:repeat(2,1fr)}.modules{grid-template-columns:1fr}.hero-left{max-width:100%}}
+</style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">SSLP</div>
+      <div>
+        <h1>Smart Student Learning & Placement Assistant</h1>
+        <div class="tag">AI-driven learning, mock interviews, and placement readiness — built for students who want results.</div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <!-- Main column -->
+      <main>
+        <!-- Hero -->
+        <section class="hero">
+          <div class="hero-left">
+            <h2 style="font-family:Poppins;margin:0;font-size:28px">From confusion to confidence — a complete path to placement success</h2>
+            <p style="margin-top:10px;color:#475569">Personalized roadmaps, adaptive practice, real-time analytics, and AI mock interviews — all in one student-first platform.</p>
+
+            <div class="cta">
+              <button class="btn-primary" onclick="openChat()">Talk to AI Mentor</button>
+              <button class="btn-ghost" onclick="scrollToSection('modules')">Explore Modules</button>
+            </div>
+            <p style="margin-top:18px;color:#475569;max-width:520px;line-height:1.7">Build a complete placement learning journey with core concept mastery, company-specific interview preparation, weekly skill checks, and progress reviews that keep your preparation on track.</p>
+            <div class="stats" aria-hidden="true">
+              <div class="stat">
+                <div style="font-size:20px;font-weight:700">+85%</div>
+                <div style="font-size:13px;color:#6b7280">Avg placement improvement</div>
+              </div>
+              <div class="stat">
+                <div style="font-size:20px;font-weight:700">1200+</div>
+                <div style="font-size:13px;color:#6b7280">Practice tests</div>
+              </div>
+              <div class="stat">
+                <div style="font-size:20px;font-weight:700">24/7</div>
+                <div style="font-size:13px;color:#6b7280">AI guidance</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="width:40%">
+            <div class="hero-visual">
+              <div class="hero-preview">
+                <div class="preview-card"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Dashboard workspace"><span>Live Dashboard</span></div>
+                <div class="preview-card"><img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="Student coding" ><span>Study Insights</span></div>
+                <div class="preview-card" style="grid-column:1/-1"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" alt="Best student overview"><span>Best Student Metrics</span></div>
+              </div>
+            </div>
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <div class="card" style="flex:1;text-align:center">
+                <div style="font-weight:700">Adaptive Roadmaps</div>
+                <div style="font-size:13px;color:#6b7280;margin-top:6px">Tailored weekly plans based on your strengths.</div>
+                <div class="small" style="margin-top:8px;color:#475569">Built around your target companies, topics to revise, and current completion pace.</div>
+              </div>
+              <div class="card" style="width:120px;text-align:center">
+                <div style="font-weight:700">Mock Interviews</div>
+                <div style="font-size:13px;color:#6b7280;margin-top:6px">AI feedback on answers & speech.</div>
+                <div class="small" style="margin-top:8px;color:#475569">Practice questions for HR, technical, and company-specific interview rounds.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Features -->
+        <section class="card" style="margin-top:18px">
+          <div class="section-title">
+            <h3>Core Features</h3>
+            <div class="pill">Student-first</div>
+          </div>
+          <div class="feature-grid">
+            <div class="feature" onclick="openFeaturePage('personalized_roadmap.html')">
+              <div style="font-size:28px">🧭</div>
+              <h4>Personalized Roadmaps</h4>
+              <div class="small">AI builds a study plan that adapts as you progress.</div>
+              <div class="small" style="margin-top:6px;color:#475569">See your weekly learning targets and review the skills you need for upcoming placement rounds.</div>
+            </div>
+            <div class="feature" onclick="openFeaturePage('real_time_analytics.html')">
+              <div style="font-size:28px">📊</div>
+              <h4>Real-time Analytics</h4>
+              <div class="small">Visualize strengths, weak topics, and progress trends.</div>
+              <div class="small" style="margin-top:6px;color:#475569">Understand your growth across aptitude, coding, and interview readiness in one place.</div>
+            </div>
+            <div class="feature" onclick="openFeaturePage('smart_mock_tests.html')">
+              <div style="font-size:28px">🧪</div>
+              <h4>Smart Mock Tests</h4>
+              <div class="small">Timed tests with detailed solutions and improvement tips.</div>
+            </div>
+            <div class="feature" onclick="openFeaturePage('ai_interview_coach.html')">
+              <div style="font-size:28px">🗣️</div>
+              <h4>AI Interview Coach</h4>
+              <div class="small">Practice HR and technical interviews with instant feedback.</div>
+            </div>
+            <div class="feature" onclick="openFeaturePage('concept_paths.html')">
+              <div style="font-size:28px">💡</div>
+              <h4>Concept Paths</h4>
+              <div class="small">Learn by concept with micro-lessons and quizzes.</div>
+            </div>
+            <div class="feature" onclick="openFeaturePage('leaderboard_rewards.html')">
+              <div style="font-size:28px">🏆</div>
+              <h4>Leaderboard & Rewards</h4>
+              <div class="small">Gamified progress to keep motivation high.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Modules & Deep Dive -->
+        <section id="modules" class="card" style="margin-top:18px">
+          <div class="section-title">
+            <h3>Modules — Deep Dive</h3>
+            <div class="pill">Comprehensive</div>
+          </div>
+          <div class="modules">
+            <div class="module-list">
+              <div class="module-card active" onclick="showModule('ai')">
+                <h4>AI Learning Module</h4>
+                <p class="small">Adaptive schedules, concept-based learning paths, and progress reports.</p>
+                <div class="pill">Active</div>
+              </div>
+              <div class="module-card" onclick="showModule('aptitude')">
+                <h4>Aptitude, Reasoning & Technical</h4>
+                <p class="small">Timed drills, problem solving, and company-specific question sets.</p>
+                <div class="pill">Practice</div>
+              </div>
+              <div class="module-card" onclick="showModule('comm')">
+                <h4>Communication Skills</h4>
+                <p class="small">Mock interviews, resume tips, speech feedback, and HR prep.</p>
+                <div class="pill">Interview</div>
+              </div>
+              <div class="module-card" onclick="showModule('java')">
+                <h4>Java & Full Stack</h4>
+                <p class="small">Java core concepts, DSA mastery, backend APIs, frontend integration, and web app projects.</p>
+                <div class="pill">Full Stack</div>
+              </div>
+              <div class="module-card" onclick="showModule('study')">
+                <h4>Study Resources</h4>
+                <p class="small">Extra study aids, resource links, and concept summaries for deeper learning.</p>
+                <div class="pill">Resources</div>
+              </div>
+            </div>
+            <div class="module-info" id="moduleInfo">
+              <h4>AI Learning Module</h4>
+              <p class="small">Adaptive schedules, concept-based learning paths, performance-based recommendations, and daily/weekly progress reports.</p>
+              <ul class="module-detail-list">
+                <li>Personalized weekly plan</li>
+                <li>Micro-lessons with quick checks</li>
+                <li>Progress heatmaps and suggestions</li>
+                <li>Concept review summaries and extra practice links</li>
+                <li>Strength-based topic repetition to reinforce weak areas</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+            <div style="flex:1" class="card">
+              <h4>Communication Skills</h4>
+              <p class="small">AI mock interviews, resume builder, speech & pronunciation feedback, and HR tips.</p>
+              <ul style="margin-top:12px;padding-left:18px;color:#475569;line-height:1.75">
+                <li>Answer structuring tips for common HR questions.</li>
+                <li>Resume review pointers to highlight achievements clearly.</li>
+                <li>Clear expression and confidence-building practice.</li>
+              </ul>
+            </div>
+            <div style="width:320px" class="card">
+              <h4>Study Resources</h4>
+              <p class="small">Curated learning tools, concept summaries, and example-driven content to support each study session.</p>
+              <ul style="margin-top:12px;padding-left:18px;color:#475569;line-height:1.75">
+                <li>Topic summaries for fast revision.</li>
+                <li>Practice tips to improve retention.</li>
+                <li>Resource links and example prompts for self-study.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Interactive Practice & Quiz -->
+        <section class="card" style="margin-top:18px">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <h3>Interactive Practice</h3>
+            <div class="pill">Try now</div>
+          </div>
+          <p style="margin-top:12px;color:#475569;max-width:720px;line-height:1.7">Practice core topics with quizzes, instant answer feedback, and guided follow-ups so you learn while you solve, not just when you study.</p>
+          <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+            <div style="flex:1;min-width:320px" class="quiz-card">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div>
+                  <strong>Quick Aptitude Drill</strong>
+                  <div style="font-size:13px;color:#6b7280">3 questions generated from your current roadmap</div>
+                </div>
+                <button class="ai-btn" onclick="openQuiz()">Open Quiz Practice</button>
+              </div>
+              <div id="quizArea" style="margin-top:12px">
+                <div class="small">Click <strong>Open Quiz Practice</strong> to go to the dedicated quiz page for interactive practice.</div>
+              </div>
+            </div>
+
+            <div style="width:320px" class="card">
+              <h4>Progress Snapshot</h4>
+              <div style="margin-top:8px">
+                <div style="display:flex;justify-content:space-between"><div class="small">Aptitude</div><div class="small">78%</div></div>
+                <div style="height:10px;background:#eef3fb;border-radius:8px;margin-top:6px;overflow:hidden">
+                  <div style="width:78%;height:100%;background:linear-gradient(90deg,var(--grad-a),var(--grad-b))"></div>
+                </div>
+
+                <div style="display:flex;justify-content:space-between;margin-top:10px"><div class="small">Coding</div><div class="small">65%</div></div>
+                <div style="height:10px;background:#eef3fb;border-radius:8px;margin-top:6px;overflow:hidden">
+                  <div style="width:65%;height:100%;background:linear-gradient(90deg,#06b6d4,#7c3aed)"></div>
+                </div>
+              </div>
+
+              <div style="margin-top:12px">
+                <button class="ai-btn" style="width:100%" onclick="openChat()">Ask AI Mentor for a plan</button>
+                <div class="small" style="margin-top:8px;color:#475569">Need a focused study strategy? Ask for a personalized weekly plan, concept summary, or interview prep checklist.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Testimonials & Social Proof -->
+        <section class="card" style="margin-top:18px">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <h3>What students say</h3>
+            <div class="pill">Real results</div>
+          </div>
+          <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+            <div class="card" style="flex:1;min-width:240px">
+              <strong>Priya R.</strong>
+              <div class="small" style="margin-top:6px">"The adaptive roadmap made my preparation focused — I improved my mock scores by 40% in 6 weeks."</div>
+            </div>
+            <div class="card" style="flex:1;min-width:240px">
+              <strong>Arjun K.</strong>
+              <div class="small" style="margin-top:6px">"AI interview feedback helped me fix my communication gaps before the final round."</div>
+            </div>
+            <div class="card" style="flex:1;min-width:240px">
+              <strong>Sana M.</strong>
+              <div class="small" style="margin-top:6px">"Company-specific question sets were a game-changer for my placement drive."</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:18px">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <h3>Best Student Showcase</h3>
+            <div class="pill">Top performers</div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px">
+            <div class="student-card">
+              <div class="student-avatar" style="background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80')"></div>
+              <div>
+                <strong>Neha R.</strong>
+                <div class="small">80% faster DSA progress with Java projects.</div>
+              </div>
+            </div>
+            <div class="student-card">
+              <div class="student-avatar" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80')"></div>
+              <div>
+                <strong>Arjun K.</strong>
+                <div class="small">Built a full-stack app and cleared campus placement.</div>
+              </div>
+            </div>
+            <div class="student-card">
+              <div class="student-avatar" style="background-image:url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=80')"></div>
+              <div>
+                <strong>Sana M.</strong>
+                <div class="small">Mastered interview communication and mock test success.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Sidebar -->
+      <aside>
+        <div class="card">
+          <h4>Get Started</h4>
+          <p class="small" style="margin-top:8px">Create your free student profile and get a 7-day personalized roadmap.</p>
+          <div style="display:flex;gap:8px;margin-top:12px">
+            <button class="ai-btn" style="flex:1" onclick="signup()">Create Profile</button>
+            <button class="btn-ghost" onclick="scrollToSection('modules')">Learn More</button>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h4>Leaderboard</h4>
+          <div class="leaderboard" style="margin-top:10px">
+            <div class="leader"><div><strong>1. Rohan</strong><div class="small">Aptitude champ</div></div><div>980 pts</div></div>
+            <div class="leader"><div><strong>2. Meera</strong><div class="small">Coding streak</div></div><div>920 pts</div></div>
+            <div class="leader"><div><strong>3. Vikram</strong><div class="small">Interview ace</div></div><div>880 pts</div></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h4>AI Tools</h4>
+          <ol style="padding-left:18px;margin-top:8px">
+            <li><strong>AI Mentor Chat</strong> — ask for study plans, summaries, or interview tips.</li>
+            <li><strong>Quiz Generator</strong> — instant MCQs tailored to your roadmap.</li>
+            <li><strong>Mock Interview</strong> — practice and get speech & answer feedback.</li>
+            <li><strong>Company Interview Questions</strong> — role-specific questions for placement rounds.</li>
+          </ol>
+          <div style="margin-top:12px;display:grid;gap:10px">
+            <button class="ai-btn" style="width:100%" onclick="openChat()">Open AI Mentor</button>
+            <button class="ai-btn" style="width:100%;background:linear-gradient(90deg,#06b6d4,#7c3aed);" onclick="openCompanyQuestions()">Interview Questions</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div>
+        <strong>Smart Student Learning & Placement Assistant</strong>
+        <div class="small" style="margin-top:6px">AI-driven learning · Mock interviews · Placement readiness</div>
+      </div>
+      <div style="display:flex;gap:12px">
+        <button class="btn-ghost" onclick="contact()">Contact</button>
+        <button class="btn-ghost" onclick="signup()">Sign up</button>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Chat widget -->
+  <button class="chat-toggle" onclick="toggleChat()">AI Mentor</button>
+  <div class="chat-panel" id="chatPanel">
+    <div class="chat-header">AI Mentor</div>
+    <div class="chat-body" id="chatBody"></div>
+    <div id="chatHints" class="small" style="padding:0 12px 12px;color:#475569;line-height:1.6;">
+      Try: "Give me a 7-day study plan", "Prepare for Amazon interview", "Help me revise arrays", "What should I practice today?"
+    </div>
+    <div class="chat-input">
+      <input id="chatInput" placeholder="Ask for a study plan, mock interview tips, or a quick quiz..." />
+      <button onclick="sendChat()">Send</button>
+    </div>
+  </div>
+
+<script>
+  // NOTE: All AI calls are placeholders. Replace fetch calls with your backend endpoints.
+  function toggleChat(){
+    const p=document.getElementById('chatPanel');
+    p.style.display = p.style.display === 'flex' ? 'none' : 'flex';
+  }
+  function openChat(){ document.getElementById('chatPanel').style.display='flex'; document.getElementById('chatInput').focus(); }
+  function signup(){ window.location.href='signup.html'; }
+  function contact(){ window.location.href='contact.html'; }
+  function openQuiz(){ window.location.href='quiz.html'; }
+  function openCompanyQuestions(){ window.location.href='company_interview_questions.html'; }
+  function openFeaturePage(page){ window.location.href = page; }
+  function scrollToSection(id){ const el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth',block:'center'}); }
+
+  function showModule(module){
+    const cards = document.querySelectorAll('.module-card');
+    cards.forEach(card => card.classList.remove('active'));
+    const info = document.getElementById('moduleInfo');
+    let html = '';
+    if(module === 'ai'){
+      cards[0].classList.add('active');
+      html = `<h4>AI Learning Module</h4>
+        <p class="small">AI builds an adaptive study plan and tracks your progress across topics.</p>
+        <ul class="module-detail-list">
+          <li>Daily learning tasks with concept-based guidance.</li>
+          <li>Weekly revision checkpoints and focus recommendations.</li>
+          <li>Performance feedback to prioritize weak topics.</li>
+          <li>Extra practice links for core concepts and placement skills.</li>
+        </ul>`;
+    } else if(module === 'aptitude'){
+      cards[1].classList.add('active');
+      html = `<h4>Aptitude, Reasoning & Technical</h4>
+        <p class="small">Build speed and accuracy with timed practice and real placement-style problems.</p>
+        <ul class="module-detail-list">
+          <li>Quantitative aptitude questions with step-by-step solutions.</li>
+          <li>Logical reasoning tests and pattern-based exercises.</li>
+          <li>Technical drills for data structures and algorithm thinking.</li>
+          <li>Company-specific question patterns for placement rounds.</li>
+        </ul>`;
+    } else if(module === 'comm'){
+      cards[2].classList.add('active');
+      html = `<h4>Communication Skills</h4>
+        <p class="small">Prepare for interviews with answer structure, speech clarity, and HR question practice.</p>
+        <ul class="module-detail-list">
+          <li>Mock interview prompts for confidence and response strength.</li>
+          <li>Resume tips to highlight projects and achievements clearly.</li>
+          <li>Speech feedback for pronunciation, pacing, and clarity.</li>
+          <li>Behavioral question frameworks for placement rounds.</li>
+        </ul>`;
+    } else if(module === 'java'){
+      cards[3].classList.add('active');
+      html = `<h4>Java & Full Stack</h4>
+        <p class="small">Learn Java core concepts, DSA fundamentals, and web development workflows for complete full-stack readiness.</p>
+        <ul class="module-detail-list">
+          <li>Java fundamentals: OOP, collections, exception handling, and coding best practices.</li>
+          <li>DSA mastery: arrays, linked lists, stacks, queues, trees, graphs, sorting, and search algorithms.</li>
+          <li>Backend basics: REST APIs, server-side logic, database integration, and Java frameworks.</li>
+          <li>Full-stack flow: frontend forms, backend services, and deployment-ready web apps.</li>
+          <li>Placement-ready projects: build web applications and demonstrate practical skills.</li>
+        </ul>`;
+    } else if(module === 'study'){
+      cards[4].classList.add('active');
+      html = `<h4>Study Resources</h4>
+        <p class="small">Use curated resources and topic summaries to strengthen your understanding across every module.</p>
+        <ul class="module-detail-list">
+          <li>Topic summaries for quick revision.</li>
+          <li>Guided practice prompts and study strategies.</li>
+          <li>Helpful resource links to deepen your learning.</li>
+          <li>Example-driven content for faster concept retention.</li>
+        </ul>`;
+    }
+    info.innerHTML = html;
+  }
+
+  async function sendChat(){
+    const input=document.getElementById('chatInput');
+    const body=document.getElementById('chatBody');
+    if(!input.value.trim()) return;
+    const userDiv=document.createElement('div'); userDiv.textContent='You: ' + input.value; userDiv.style.margin='8px 0'; userDiv.style.fontWeight=700;
+    body.appendChild(userDiv);
+    const aiDiv=document.createElement('div'); aiDiv.textContent='AI: Thinking...'; aiDiv.style.margin='8px 0'; aiDiv.style.color='#0b1220';
+    body.appendChild(aiDiv);
+    body.scrollTop = body.scrollHeight;
+
+    // Replace with real API call:
+    // const res = await fetch('/api/ai/chat', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({prompt: input.value})});
+    // const data = await res.json();
+    // aiDiv.textContent = 'AI: ' + data.text;
+
+    // Simulated response:
+    setTimeout(()=>{
+      aiDiv.textContent = 'AI: ' + getAiResponse(input.value);
+      body.scrollTop = body.scrollHeight;
+    },700);
+    input.value='';
+  }
+
+  function getAiResponse(prompt){
+    const text = prompt.toLowerCase();
+    if(text.includes('study plan') || text.includes('plan')){
+      return 'Create a focused 4-week plan: Week 1 - core concepts and revision, Week 2 - aptitude & reasoning practice, Week 3 - coding problems and data structures, Week 4 - mock interviews and company-specific preparation.';
+    }
+    if(text.includes('amazon') || text.includes('google') || text.includes('microsoft') || text.includes('infosys') || text.includes('company')){
+      return 'For company interview prep, focus on data structures, problem-solving patterns, and clear behavioral responses. Review common questions, explain your thought process, and practice with mock rounds.';
+    }
+    if(text.includes('arrays') || text.includes('linked list') || text.includes('stack') || text.includes('queue') || text.includes('tree')){
+      return 'Arrays are fundamental for placement coding. Practice traversal, two-pointer patterns, sorting, and subarray problems. For linked lists, focus on reversal, cycle detection, and merge operations.';
+    }
+    if(text.includes('today') || text.includes('now') || text.includes('practice')){
+      return 'Today, solve one aptitude question, one coding problem, and one short concept review. Review any mistakes immediately and note the topic for your next practice session.';
+    }
+    const defaultResponses = [
+      'Start with a quick review of your current weak topics, then practice one coding problem and one aptitude question.',
+      'Use mock quizzes to identify gaps, then study the relevant concept paths and revisit the examples.',
+      'If you want, I can give you a short interview prep checklist or a concept summary for a specific topic.'
+    ];
+    return defaultResponses[Math.floor(Math.random()*defaultResponses.length)];
+  }
+
+  // Quiz generator (placeholder AI)
+  function generateQuiz(){
+    const questions = [
+      {
+        q: "Which module helps with speech & pronunciation feedback?",
+        options: ["AI Learning Module","Communication Skills","Study Resources","Leaderboard"],
+        answer: 1
+      },
+      {
+        q: "What does the platform use to personalize study plans?",
+        options: ["AI/ML algorithms","Manual schedules only","Printed guides","Random selection"],
+        answer: 0
+      },
+      {
+        q: "Which feature helps track strengths and weaknesses?",
+        options: ["Real-time analytics","Mock interviews only","Leaderboard only","None"],
+        answer: 0
+      }
+    ];
+    renderQuiz(questions);
+  }
+
+  function renderQuiz(questions){
+    const area = document.getElementById('quizArea');
+    area.innerHTML = '';
+    questions.forEach((item, idx) => {
+      const card = document.createElement('div'); card.className='quiz-card'; card.style.marginBottom='12px';
+      const q = document.createElement('div'); q.style.fontWeight=800; q.textContent = (idx+1)+'. '+item.q;
+      card.appendChild(q);
+      item.options.forEach((opt, i) => {
+        const o = document.createElement('div'); o.className='option'; o.textContent = opt;
+        o.onclick = () => {
+          const siblings = card.querySelectorAll('.option');
+          siblings.forEach(s=>s.classList.remove('correct','wrong'));
+          if(i === item.answer){ o.classList.add('correct'); showToast('Correct!'); }
+          else { o.classList.add('wrong'); showToast('Incorrect — review the related module.'); }
+        };
+        card.appendChild(o);
+      });
+      area.appendChild(card);
+    });
+  }
+
+  function showToast(msg){
+    let t = document.getElementById('toast');
+    if(!t){
+      t = document.createElement('div'); t.id='toast';
+      t.style.position='fixed'; t.style.left='50%'; t.style.bottom='28px'; t.style.transform='translateX(-50%)';
+      t.style.background='rgba(2,6,23,0.9)'; t.style.color='#fff'; t.style.padding='10px 14px'; t.style.borderRadius='10px';
+      document.body.appendChild(t);
+    }
+    t.textContent = msg; t.style.opacity=1;
+    setTimeout(()=>{ t.style.transition='opacity 600ms'; t.style.opacity=0; },1600);
+  }
+</script>
+</body>
+</html>

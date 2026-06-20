@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Quiz Practice — SSLP</title>
+<style>
+  :root{--bg:#071029;--card:#ffffff;--muted:#6b7280;--grad-a:#7c3aed;--grad-b:#06b6d4;--radius:18px;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,#071029,#041226);color:#0b1220;min-height:100vh;}
+  .page{max-width:900px;margin:28px auto;padding:28px;border-radius:24px;background:#fff;}
+  .back{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;border:1px solid rgba(11,16,32,0.08);cursor:pointer;background:#f8fafc;text-decoration:none;color:#0b1220}
+  .card{background:#f8fafc;border-radius:18px;padding:24px;margin-top:18px;box-shadow:0 16px 40px rgba(2,6,23,0.08)}
+  .question-card{background:#fff;border-radius:14px;padding:18px;margin-bottom:14px;border:1px solid #e2e8f0}
+  .option{display:block;margin-top:10px;padding:12px 14px;border-radius:12px;border:1px solid #cbd5e1;cursor:pointer}
+  .option.selected{border-color:#7c3aed;background:rgba(124,58,237,0.08)}
+  .ai-btn{background:linear-gradient(90deg,var(--grad-a),var(--grad-b));color:#fff;padding:14px 18px;border:none;border-radius:14px;cursor:pointer;font-weight:700;margin-top:12px}
+  .results{margin-top:18px;padding:18px;border-radius:16px;background:#ecfdf5;border:1px solid #d1fae5;color:#065f46}
+</style>
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="mini_project.html">← Back to Dashboard</a>
+    <h1>Quiz Practice</h1>
+    <div class="card" id="quizContainer"></div>
+    <button class="ai-btn" onclick="submitQuiz()">Submit Answers</button>
+    <div id="quizResult" class="results" style="display:none;"></div>
+  </div>
+<script>
+  const quizQuestions = [
+    { q: 'What is the time complexity of binary search?', options:['O(n)','O(log n)','O(n log n)','O(1)'], answer:1 },
+    { q: 'Which data structure uses FIFO order?', options:['Stack','Queue','Tree','Graph'], answer:1 },
+    { q: 'In CSS, which property changes the spacing between letters?', options:['line-height','letter-spacing','word-spacing','text-indent'], answer:1 },
+    { q: 'Which HTTP method is typically used to update existing data?', options:['GET','POST','PUT','DELETE'], answer:2 }
+  ];
+  function renderQuiz(){
+    const container = document.getElementById('quizContainer');
+    container.innerHTML = quizQuestions.map((item, idx) => {
+      const options = item.options.map((opt, optIndex) => 
+        `<label class="option"><input type="radio" name="q${idx}" value="${optIndex}" style="margin-right:8px"/>${opt}</label>`
+      ).join('');
+      return `<div class="question-card"><strong>${idx+1}. ${item.q}</strong>${options}</div>`;
+    }).join('');
+  }
+  function submitQuiz(){
+    const resultEl = document.getElementById('quizResult');
+    let score = 0;
+    quizQuestions.forEach((item, idx) => {
+      const selected = document.querySelector(`input[name='q${idx}']:checked`);
+      if(selected && Number(selected.value) === item.answer) score += 1;
+    });
+    resultEl.style.display = 'block';
+    resultEl.textContent = `Your score: ${score} / ${quizQuestions.length}. ${score === quizQuestions.length ? 'Excellent work!' : 'Review the concepts and try again.'}`;
+  }
+  renderQuiz();
+</script>
+</body>
+</html>
